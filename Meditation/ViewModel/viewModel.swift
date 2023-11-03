@@ -2,7 +2,7 @@
 //  viewModel.swift
 //  Meditation
 //
-//  Created by Somnath Jadhav on 11/2/23.
+//  Created by Umesh kundgar on 11/2/23.
 //
 
 import Foundation

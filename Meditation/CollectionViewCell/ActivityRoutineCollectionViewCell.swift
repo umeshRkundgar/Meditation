@@ -2,7 +2,7 @@
 //  ActivityRoutineCollectionViewCell.swift
 //  supermindProject
 //
-//  Created by Somnath Jadhav on 11/2/23.
+//  Created by Umesh kundgar on 11/2/23.
 //
 
 import UIKit
@@ -13,7 +13,6 @@ class ActivityRoutineCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var journalLabel: UILabel!
     @IBOutlet weak var TenLabel: UILabel!
-    @IBOutlet weak var minsLabel: UILabel!
     @IBOutlet weak var timerButton: UIButton!
     @IBOutlet weak var minLabel: UILabel!
     override func awakeFromNib() {

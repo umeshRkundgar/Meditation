@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  supermindProject
 //
-//  Created by Somnath Jadhav on 11/2/23.
+//  Created by Umesh kundgar on 11/2/23.
 //
 
 import UIKit
@@ -21,30 +21,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        view.backgroundColor = .white
-              
-
-              // Create a new gradient layer
-//              let gradientLayer = CAGradientLayer()
-//              // Set the colors and locations for the gradient layer
-//              gradientLayer.colors = [UIColor.blue.cgColor, UIColor.red.cgColor]
-//              gradientLayer.locations = [0.0, 1.0]
-//
-//              // Set the start and end points for the gradient layer
-//              gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
-//              gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
-//
-//              // Set the frame to the layer
-//              gradientLayer.frame = view.frame
-//
-//              // Add the gradient layer as a sublayer to the background view
-//              view.layer.insertSublayer(gradientLayer, at: 0)
-//        view.backgroundColor = .systemPurple
+        // Do any additional setup after loading the view
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "beautiful")
+        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
+        self.view.insertSubview(backgroundImage, at: 0)
         imageViewUI()
         xpLevelViewUI()
-
         view1UI()
         menuCollectionViewUI()
         GoalLabelUI()
@@ -68,7 +51,7 @@ class ViewController: UIViewController {
     var xpLevelView = UIView()
     func xpLevelViewUI(){
         xpLevelView.translatesAutoresizingMaskIntoConstraints = false
-        xpLevelView.backgroundColor = .link
+        xpLevelView.backgroundColor = .gray
         xpLevelView.layer.cornerRadius = 8
         xpLevelView.layer.borderWidth = 2
         xpLevelView.layer.borderColor = UIColor.cyan.cgColor
@@ -109,21 +92,13 @@ class ViewController: UIViewController {
         
     }
     var XpLabel  = UILabel()
-    
-    func xpLabelUI(){
-        
-        
-    }
     var LevelLabel  = UILabel()
-    
-    func LevelLabelUI(){
-        
-        
-    }
     var view1  =  UIView()
     var expireLabel = UILabel()
     var expireLabel1 = UILabel()
     var exploreButton = UIButton()
+    
+    
     func view1UI(){
         view1.translatesAutoresizingMaskIntoConstraints = false
         view1.backgroundColor = .systemPink
@@ -137,14 +112,12 @@ class ViewController: UIViewController {
         
         expireLabel.translatesAutoresizingMaskIntoConstraints = false
         expireLabel.backgroundColor = .clear
-//        expireLabel.layer.cornerRadius = 5
-//        expireLabel.layer.borderWidth = 5
-//        expireLabel.layer.borderColor = UIColor.black.cgColor
         expireLabel.text = "Your Level premium is about to expire,renew now!"
+        expireLabel.textColor = .white
         expireLabel.font = UIFont.systemFont(ofSize: 12)
         expireLabel.numberOfLines = 0
         view1.addSubview(expireLabel)
-        NSLayoutConstraint(item: expireLabel, attribute: .top, relatedBy: .equal, toItem: view1, attribute: .top, multiplier: 1, constant: 15).isActive = true
+        NSLayoutConstraint(item: expireLabel, attribute: .top, relatedBy: .equal, toItem: view1, attribute: .top, multiplier: 1, constant: 8).isActive = true
         NSLayoutConstraint(item: expireLabel, attribute: .leading, relatedBy: .equal, toItem: view1, attribute: .leading, multiplier: 1, constant: 10).isActive = true
         NSLayoutConstraint(item: expireLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 60).isActive = true
         NSLayoutConstraint(item: expireLabel, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 180).isActive = true
@@ -155,11 +128,8 @@ class ViewController: UIViewController {
         expireLabel1.layer.borderWidth = 2
         expireLabel1.layer.borderColor = UIColor.white.cgColor
         expireLabel1.text = "  Explore"
+        expireLabel1.textColor = .white
         expireLabel1.textAlignment = .left
-//        expireLabel1.layer.cornerRadius = 5
-//        e
-//        expireLabel1.layer.borderWidth = 1
-
         view1.addSubview(expireLabel1)
         NSLayoutConstraint(item: expireLabel1, attribute: .top, relatedBy: .equal, toItem: view1, attribute: .top, multiplier: 1, constant: 20).isActive = true
         NSLayoutConstraint(item: expireLabel1, attribute: .leading, relatedBy: .equal, toItem: expireLabel, attribute: .trailing, multiplier: 1, constant: 20).isActive = true
@@ -168,17 +138,12 @@ class ViewController: UIViewController {
         
         
         
-        
-        
-        
         exploreButton.translatesAutoresizingMaskIntoConstraints = false
         exploreButton.backgroundColor = .clear
-//        exploreButton.setTitleColor(UIColor.tintColor.withAlphaComponent(0.5), for: .normal)
-//        exploreButton.setTitle("Explore", for: .normal)
         exploreButton.tintColor = UIColor.gray
         exploreButton.setImage(UIImage(named: "download"), for: .normal)
         view1.addSubview(exploreButton)
-        NSLayoutConstraint(item: exploreButton, attribute: .top, relatedBy: .equal, toItem: view1, attribute: .top, multiplier: 1, constant: 30).isActive = true
+        NSLayoutConstraint(item: exploreButton, attribute: .top, relatedBy: .equal, toItem: view1, attribute: .top, multiplier: 1, constant: 35).isActive = true
         NSLayoutConstraint(item: exploreButton, attribute: .leading, relatedBy: .equal, toItem: expireLabel1, attribute: .leading, multiplier: 1, constant: 100).isActive = true
         NSLayoutConstraint(item: exploreButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 20).isActive = true
         NSLayoutConstraint(item: exploreButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 20).isActive = true
@@ -196,16 +161,12 @@ class ViewController: UIViewController {
         NSLayoutConstraint(item: GoalLabel, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 15).isActive = true
         NSLayoutConstraint(item: GoalLabel, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: -100).isActive = true
         NSLayoutConstraint(item: GoalLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 50).isActive = true
-
-//        NSLayoutConstraint(item: GoalLabel, attribute: .width, relatedBy: .equal, toItem: view, attribute: .width, multiplier: 1, constant: 100).isActive = true
-
     }
     var GoalCollectionView =  UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
         var layout1 : UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         func GoalCollectionViewUI(){
             layout1.minimumInteritemSpacing = 20
             layout1.scrollDirection = .horizontal
-//layout1.minimumLineSpacing = 20
             layout1.itemSize = CGSize(width: 375/1.20 , height: 812/5.30)//CGSize(width: Width1/6.82666, height:Height1/4.2666)
             GoalCollectionView.translatesAutoresizingMaskIntoConstraints = false
             GoalCollectionView.dataSource = self
@@ -234,8 +195,6 @@ class ViewController: UIViewController {
         NSLayoutConstraint(item: ActivityRoutineLabel, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: 100).isActive = true
         NSLayoutConstraint(item: ActivityRoutineLabel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 50).isActive = true
 
-//        NSLayoutConstraint(item: GoalLabel, attribute: .width, relatedBy: .equal, toItem: view, attribute: .width, multiplier: 1, constant: 100).isActive = true
-
     }
     
     var menuCollectionView =  UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
@@ -243,7 +202,7 @@ class ViewController: UIViewController {
         func menuCollectionViewUI(){
             layout.minimumInteritemSpacing = 20
             layout.minimumLineSpacing = 10
-            layout.itemSize = CGSize(width: 375/1.00 , height: 812/6.00)//CGSize(width: Width1/6.82666, height:Height1/4.2666)
+            layout.itemSize = CGSize(width: 375/1.00 , height: 812/6.00)
             menuCollectionView.translatesAutoresizingMaskIntoConstraints = false
             menuCollectionView.dataSource = self
             menuCollectionView.delegate = self
@@ -277,7 +236,7 @@ extension ViewController:  UICollectionViewDataSource, UICollectionViewDelegate,
         pickerView.delegate = self
         pickerView.dataSource = self
         
-        let pickerViewContainer = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 812/4.06))
+        let pickerViewContainer = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 812/4.70))
         pickerViewContainer.backgroundColor = UIColor.white
         pickerViewContainer.addSubview(pickerView)
         
@@ -307,15 +266,29 @@ extension ViewController:  UICollectionViewDataSource, UICollectionViewDelegate,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == GoalCollectionView {
             let cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ActivityRoutineCollectionViewCell
+            cell1.imageView.layer.cornerRadius = 35
+            if indexPath.row == 0 {
+               
+                cell1.backgroundColor = UIColor.twilight60
+            }else{
+                cell1.backgroundColor = UIColor.twilight60Twilight
+            }
             cell1.gratitudeLabel.text = GoalArray[indexPath.row]["Step"]
             cell1.journalLabel.text = GoalArray[indexPath.row]["medi"]
-            cell1.timerButton.titleLabel?.text = self.timeToShow
+            cell1.timerButton.titleLabel?.text = "\(self.timeToShow)"
             cell1.timerButton.addTarget(self, action: #selector(timerAction), for: .touchUpInside)
             cell1.layer.cornerRadius = 10
             return cell1
         }else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ActivityRoutineCollectionViewCell
             cell.layer.cornerRadius = 10
+            cell.imageView.layer.cornerRadius = 25
+            if indexPath.row == 0 {
+                cell.backgroundColor = UIColor.coral
+            }else{
+                cell.backgroundColor = UIColor.lightBlueGrey
+                cell.imageView.image = UIImage(named: "ball")
+            }
             cell.gratitudeLabel.text = routineArray[indexPath.row]["Step"]
             cell.journalLabel.text = routineArray[indexPath.row]["medi"]
             return cell
@@ -403,4 +376,21 @@ extension ViewController:  UICollectionViewDataSource, UICollectionViewDelegate,
         }
 
 
+}
+extension UIColor{
+    static  var twilight60: UIColor {
+           return UIColor(red: 91.0 / 255.0, green: 88.0 / 255.0, blue: 166.0 / 255.0, alpha: 0.6)
+         }
+    static var twilight60Twilight: UIColor {
+        return UIColor(red: 91.0 / 255.0, green: 88.0 / 255.0, blue: 166.0 / 255.0, alpha: 1.0)
+    }
+    static var twilight60Twilight60: UIColor {
+        return UIColor(red: 91.0 / 255.0, green: 88.0 / 255.0, blue: 166.0 / 255.0, alpha: 0.6)
+    }
+    static var coral: UIColor {
+        return UIColor(red: 226.0 / 255.0, green: 99.0 / 255.0, blue: 99.0 / 255.0, alpha: 1.0)
+    }
+   static var lightBlueGrey: UIColor {
+        return UIColor(red: 176.0 / 255.0, green: 196.0 / 255.0, blue: 222.0 / 255.0, alpha: 1.0)
+    }
 }
